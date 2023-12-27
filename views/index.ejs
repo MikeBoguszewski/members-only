@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Members Only</title>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="text-light mb-3 mt-5 text-center">Welcome to the secret club for <strong class="text-primary">members</strong> only.</h3>
+    <h3 class="text-light mb-3 text-center">Only <strong class="text-primary">members</strong> can post and view message details.</h3>
+    <h1 class="text-light mb-3"><strong class="text-primary">Member</strong> Posts</h3>
+    <% if (locals.user && locals.user.membershipStatus) { %>
+    <a href="/new-message" class="btn btn-primary mb-3">New Message</a>
+    <% } %>
+    <ul class="text-light">
+      <% for (let i = messages.length - 1; i >=0; i--) { %> <% const message = messages[i] %>
+      <div class="card mb-3">
+        <li class="card-body">
+          <h4 class="card-title"><%= message.title %></h4>
+          <div class="card-text">
+            <% if (locals.user && locals.user.membershipStatus) { %>
+            <p><%- "by " + message.user.name %></p>
+            <p><%- message.timestamp %></p>
+            <% } %>
+            <p><%- message.text %></p>
+          </div>
+          <% if (locals.user && locals.user.admin) { %>
+          <form action="/message/<%= message._id %>/delete" method="POST">
+            <!-- <input type="hidden" name="_method" value="DELETE" /> -->
+            <button class="btn btn-outline-danger">Delete</button>
+          </form>
+          <% } %>
+        </li>
+      </div>
+      <% } %>
+    </ul>
+  </body>
+</html>
