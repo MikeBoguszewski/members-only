@@ -8,7 +8,7 @@ This is a solution to the **Members Only** project from [The Odin Project](https
 - Users should be able to:
   - Sign up and log in to the app using an authentication system.
   - Create posts only when signed in.
-  - Users can see the posts author and date of posts made by other users only when they are signed in.
+  - Users can see the post's author and date of posts made by other users only when they are signed in.
   - Implement user authorization using session management.
 
 ## **Screenshot**
