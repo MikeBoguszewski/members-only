@@ -16,8 +16,8 @@ This is a solution to the **Members Only** project from [The Odin Project](https
 ![App Screenshot](./screenshot.jpg)
 
 ## **Links**
-- Live Demo: https://github.com/MikeBoguszewski/members-only
-- GitHub Repository: https://members-only-iw3z.onrender.com/
+- Live Demo: https://members-only-iw3z.onrender.com/
+- GitHub Repository: https://github.com/MikeBoguszewski/members-only
 
 ---
 
